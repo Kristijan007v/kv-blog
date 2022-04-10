@@ -1,4 +1,5 @@
 import Article from "../components/Article/Article";
+import DefaultButton from "../components/Navigation/Buttons/DefaultButton";
 import Skeleton from "../components/Skeleton/Skeleton";
 
 export default function Home() {
@@ -19,7 +20,12 @@ export default function Home() {
             <h2 className="text-center text-white font-semibold text-3xl">
               Recent posts
             </h2>
-            <Article />
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8">
+              <Article />
+              <Article />
+              <Article />
+            </section>
+            <DefaultButton text={"Load more"} centerMode={"yes"} />
           </>
         }
       />

@@ -26,7 +26,20 @@ export default function Navigation() {
           <Link href="/">
             <a className="font-semibold text-xl">KV.blog</a>
           </Link>
-          <div className="flex space-x-4">
+          <div className="hidden space-x-6 md:flex">
+            <SearchButton onclick={toogleSearch} />
+            <Link href="/">
+              <a className="font-semibold text-xl link">Home</a>
+            </Link>
+            <Link href="/">
+              <a className="font-semibold text-xl link">Categories</a>
+            </Link>
+            <Link href="/">
+              <a className="font-semibold text-xl link">Contact me</a>
+            </Link>
+          </div>
+
+          <div className="flex space-x-4 md:hidden">
             <SearchButton onclick={toogleSearch} />
             <MenuButton onclick={toogleMenu} />
           </div>

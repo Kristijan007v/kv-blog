@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .icon {
-  @apply text-3xl text-white;
+  @apply text-3xl text-white cursor-pointer;
 }
 
 .icon__special {
@@ -43,4 +43,8 @@ body {
 
 .link {
   @apply text-white hover:underline hover:underline-offset-4;
+}
+
+.btn {
+  @apply bg-primary text-white pt-2 pb-2 pr-6 pl-6 rounded-md hover:bg-blue-600;
 }

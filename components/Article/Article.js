@@ -12,7 +12,7 @@ export default function Article() {
         className="rounded-md"
         src={"/images/article.jpg"}
         width="100%"
-        height={"100%"}
+        height={"80%"}
         alt={"Article Image"}
         layout={"responsive"}
       />

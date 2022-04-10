@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="m-8 flex flex-col justify-center space-y-6">
+    <div className="mt-8 mb-8 flex flex-col justify-center space-y-6 w-5/6 md:w-3/4 m-auto lg:w-2/4 xl:w-2/5">
       <p className="text-center text-white font-semibold text-2xl">
         Get the latest posts delivered right to your inbox.
       </p>
