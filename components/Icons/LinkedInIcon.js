@@ -1,8 +1,8 @@
 import React from "react";
 import { IconContext } from "react-icons";
-import { AiOutlineInstagram } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
 
-export default function InstagramIconDefault({ onclick }) {
+export default function LinkedInIcon({ onclick }) {
   return (
     <>
       <IconContext.Provider
@@ -10,7 +10,7 @@ export default function InstagramIconDefault({ onclick }) {
           className: "icon__social",
         }}
       >
-        <AiOutlineInstagram onClick={onclick} />
+        <AiFillLinkedin onClick={onclick} />
       </IconContext.Provider>
     </>
   );

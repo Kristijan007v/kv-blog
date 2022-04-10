@@ -1,4 +1,5 @@
 import React from "react";
+import SocialLink from "../SocialLink/SocialLink";
 
 export default function Footer() {
   return (
@@ -14,9 +15,10 @@ export default function Footer() {
       <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
         Subscribe
       </button>
-      <p className="text-sm md:text-md text-center text-gray-600 font-semibold">
+      <p className="text-sm md:text-md text-center text-grayInfo font-semibold">
         Designed and built by Kristijan Vidović
       </p>
+      <SocialLink />
     </div>
   );
 }
