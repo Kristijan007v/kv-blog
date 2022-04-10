@@ -77,7 +77,7 @@ export default function Navigation() {
         )}
         {/* Menu  - MOBILE ONLY */}
         {isMenuOpen && (
-          <div className="flex-none bg-primary p-6">
+          <div className="flex-none md:hidden bg-primary p-6">
             <ul className="text-center flex flex-col space-y-2 text-xl">
               <li>
                 <Link href="/">
@@ -101,7 +101,7 @@ export default function Navigation() {
       {/* Search */}
       {isSearchOpen && (
         <div className="fixed top-0 left-0 right-0 bg-primary p-6 z-30 flex flex-col space-y-4">
-          <div className="flex justify-between items-center space-x-4">
+          <div className="flex justify-between items-center space-x-4 w-full lg:w-4/5 m-auto">
             <input
               type="text"
               className="p-2 bg-transparent text-white border-b-2 border-white focus:outline-none placeholder-white flex-grow"
@@ -109,15 +109,17 @@ export default function Navigation() {
             />
             <CloseButton onclick={toogleSearch} />
           </div>
-          <p className="p__default">See posts by tags</p>
-          <div className="flex space-x-2">
-            <Tag text={`Python`} />
-            <Tag text={`HTML`} />
-          </div>
-          <p className="p__default">See posts by categories</p>
-          <div className="flex space-x-2">
-            <Tag text={`Frontend`} />
-            <Tag text={`Backend`} />
+          <div className=" w-full lg:w-4/5 m-auto flex flex-col space-y-4">
+            <p className="p__default">See posts by tags</p>
+            <div className="flex space-x-2">
+              <Tag text={`Python`} />
+              <Tag text={`HTML`} />
+            </div>
+            <p className="p__default">See posts by categories</p>
+            <div className="flex space-x-2">
+              <Tag text={`Frontend`} />
+              <Tag text={`Backend`} />
+            </div>
           </div>
         </div>
       )}
