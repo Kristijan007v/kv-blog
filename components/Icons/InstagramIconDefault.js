@@ -2,16 +2,20 @@ import React from "react";
 import { IconContext } from "react-icons";
 import { AiOutlineInstagram } from "react-icons/ai";
 
-export default function InstagramIconDefault({ onclick }) {
+export default function InstagramIconDefault({ onclick, link }) {
   return (
     <>
-      <IconContext.Provider
-        value={{
-          className: "icon__social",
-        }}
-      >
+      {link ? (
         <AiOutlineInstagram onClick={onclick} />
-      </IconContext.Provider>
+      ) : (
+        <IconContext.Provider
+          value={{
+            className: "icon__social",
+          }}
+        >
+          <AiOutlineInstagram onClick={onclick} />
+        </IconContext.Provider>
+      )}
     </>
   );
 }

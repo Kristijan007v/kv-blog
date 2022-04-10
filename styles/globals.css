@@ -17,6 +17,10 @@
   @apply text-grayInfo font-bold text-4xl;
 }
 
+.link__icon {
+  @apply text-grayInfo font-bold text-4xl hover:text-primary cursor-pointer;
+}
+
 body {
   @apply bg-secondary font-Roboto;
 }
