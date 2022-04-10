@@ -13,8 +13,7 @@ export default function Home() {
                 Welcome to my blog!
               </h1>
               <p className="text-center m-6 text-gray-400 text-2xl font-semibold">
-                I use this space to document my adventures in front-end
-                development.
+                I use this space to document my adventures in web development.
               </p>
             </div>
             <h2 className="text-center text-white font-semibold text-3xl">
