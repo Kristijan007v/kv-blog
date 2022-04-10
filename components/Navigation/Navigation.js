@@ -1,11 +1,12 @@
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
-import Search from "../Search/Search";
+import CloseButton from "./Buttons/CloseButton";
 import MenuButton from "./Buttons/MenuButton";
 import SearchButton from "./Buttons/SearchButton";
-import CloseButton from "./Buttons/CloseButton";
 import Tag from "./Tag/Tag";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
+import "@reach/skip-nav/styles.css";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -49,7 +50,8 @@ export default function Navigation() {
   };
   return (
     <>
-      <nav className="bg-primary text-white sticky top-0 z-20">
+      <SkipNavLink />
+      <nav className="bg-primary text-white sticky top-0 z-10">
         <div className="flex justify-between items-center p-4">
           <Link href="/">
             <a className="font-semibold text-xl">KV.blog</a>
@@ -171,6 +173,7 @@ export default function Navigation() {
           </motion.div>
         </AnimatePresence>
       )}
+      <SkipNavContent />
     </>
   );
 }
