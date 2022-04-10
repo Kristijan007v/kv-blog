@@ -15,35 +15,35 @@ body {
 }
 
 .icon__special {
-  @apply text-grayInfo font-bold text-2xl;
+  @apply text-gray-700 dark:text-grayInfo font-bold text-2xl;
 }
 
 .icon__social {
-  @apply text-grayInfo font-bold text-4xl;
+  @apply text-gray-700 dark:text-grayInfo font-bold text-4xl;
 }
 
 .link__icon {
-  @apply text-grayInfo font-bold text-4xl hover:text-primary cursor-pointer;
+  @apply text-gray-700 dark:text-grayInfo font-bold text-4xl hover:text-primary cursor-pointer;
 }
 
 body {
-  @apply bg-secondary font-Roboto;
+  @apply bg-white dark:bg-secondary font-Roboto;
 }
 
 .heading__main {
-  @apply text-left text-white font-bold text-4xl;
+  @apply text-left text-black dark:text-white font-bold text-4xl;
 }
 
 .heading__2 {
-  @apply text-left text-white font-bold text-3xl;
+  @apply text-left text-black dark:text-white font-bold text-3xl;
 }
 
 .heading__post {
-  @apply text-white text-2xl font-semibold;
+  @apply text-black dark:text-white text-2xl font-semibold;
 }
 
 .p__post {
-  @apply text-lg font-medium text-graySpecial;
+  @apply text-lg font-medium text-gray-800 dark:text-graySpecial;
 }
 
 .p__default {
@@ -51,7 +51,7 @@ body {
 }
 
 .text__author {
-  @apply text-grayInfo font-medium;
+  @apply text-gray-700 dark:text-grayInfo font-medium;
 }
 
 .link {
