@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
+import SkipContentLink from "../SkipContentLink/SkipContentLink";
+import SkipToMain from "../SkipToMain/SkipToMain";
 import CloseButton from "./Buttons/CloseButton";
 import MenuButton from "./Buttons/MenuButton";
 import SearchButton from "./Buttons/SearchButton";
 import Tag from "./Tag/Tag";
-import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
-import "@reach/skip-nav/styles.css";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -50,7 +50,7 @@ export default function Navigation() {
   };
   return (
     <>
-      <SkipNavLink />
+      <SkipContentLink />
       <nav className="bg-primary text-white sticky top-0 z-10">
         <div className="flex justify-between items-center p-4">
           <Link href="/">
@@ -173,7 +173,7 @@ export default function Navigation() {
           </motion.div>
         </AnimatePresence>
       )}
-      <SkipNavContent />
+      <SkipToMain />
     </>
   );
 }

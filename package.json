@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reach/skip-nav": "^0.16.0",
     "framer-motion": "^6.2.9",
     "next": "12.1.4",
     "react": "18.0.0",
