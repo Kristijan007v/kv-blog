@@ -49,68 +49,63 @@ export default function Navigation() {
   };
   return (
     <>
-      <AnimatePresence
-        // Disable any initial animations on children that
-        // are present when the component is first rendered
-        initial={false}
-        // Only render one component at a time.
-        // The exiting component will finish its exit
-        // animation before entering component is rendered
-        exitBeforeEnter={true}
-        // Fires when all exiting nodes have completed animating out
-        onExitComplete={() => null}
-      >
-        <nav className="bg-primary text-white sticky top-0 z-20">
-          <div className="flex justify-between items-center p-4">
+      <nav className="bg-primary text-white sticky top-0 z-20">
+        <div className="flex justify-between items-center p-4">
+          <Link href="/">
+            <a className="font-semibold text-xl">KV.blog</a>
+          </Link>
+          <div className="hidden space-x-6 md:flex items-center">
+            <SearchButton onclick={toogleSearch} />
             <Link href="/">
-              <a className="font-semibold text-xl">KV.blog</a>
+              <a className="font-semibold text-xl link">Home</a>
             </Link>
-            <div className="hidden space-x-6 md:flex items-center">
-              <SearchButton onclick={toogleSearch} />
-              <Link href="/">
-                <a className="font-semibold text-xl link">Home</a>
-              </Link>
-              <button
-                className="font-semibold text-xl link"
-                onClick={toogleCategories}
-              >
-                Categories
-              </button>
-              <Link href="/">
-                <a className="font-semibold text-xl link">Contact me</a>
-              </Link>
-            </div>
-
-            <div className="flex space-x-4 md:hidden">
-              <SearchButton onclick={toogleSearch} />
-              <MenuButton onclick={toogleMenu} />
-            </div>
+            <button
+              className="font-semibold text-xl link"
+              onClick={toogleCategories}
+            >
+              Categories
+            </button>
+            <Link href="/">
+              <a className="font-semibold text-xl link">Contact me</a>
+            </Link>
           </div>
-          {/* Categories menu - DESKTOP ONLY */}
-          {isCategoriesOpen && (
-            <div className="hidden md:block bg-special p-4">
-              <ul className="text-center flex space-x-4 text-xl">
-                <li>
-                  <Link href="/">
-                    <a className="link">Web development</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">
-                    <a className="link">Frontend</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">
-                    <a className="link">Backend</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
-          {/* Menu  - MOBILE ONLY */}
-          {isMenuOpen && (
-            <div className="flex-none md:hidden bg-primary p-6">
+
+          <div className="flex space-x-4 md:hidden">
+            <SearchButton onclick={toogleSearch} />
+            <MenuButton onclick={toogleMenu} />
+          </div>
+        </div>
+        {/* Categories menu - DESKTOP ONLY */}
+        {isCategoriesOpen && (
+          <div className="hidden md:block bg-special p-4">
+            <ul className="text-center flex space-x-4 text-xl">
+              <li>
+                <Link href="/">
+                  <a className="link">Web development</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Frontend</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Backend</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+        {/* Menu  - MOBILE ONLY */}
+        {isMenuOpen && (
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex-none md:hidden bg-primary p-6"
+            >
               <ul className="text-center flex flex-col space-y-2 text-xl">
                 <li>
                   <Link href="/">
@@ -128,11 +123,23 @@ export default function Navigation() {
                   </Link>
                 </li>
               </ul>
-            </div>
-          )}
-        </nav>
-        {/* Search */}
-        {isSearchOpen && (
+            </motion.div>
+          </AnimatePresence>
+        )}
+      </nav>
+      {/* Search */}
+      {isSearchOpen && (
+        <AnimatePresence
+          // Disable any initial animations on children that
+          // are present when the component is first rendered
+          initial={true}
+          // Only render one component at a time.
+          // The exiting component will finish its exit
+          // animation before entering component is rendered
+          exitBeforeEnter={true}
+          // Fires when all exiting nodes have completed animating out
+          onExitComplete={() => null}
+        >
           <motion.div
             onClick={(e) => e.stopPropagation()}
             variants={dropIn}
@@ -162,8 +169,8 @@ export default function Navigation() {
               </div>
             </div>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+      )}
     </>
   );
 }
