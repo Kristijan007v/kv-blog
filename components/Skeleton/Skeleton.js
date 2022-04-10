@@ -17,7 +17,7 @@ export default function Skeleton({ title, content }) {
         <Navigation />
       </ErrorBoundary>
 
-      <main className="w-full md:w-4/5 m-auto lg:w-5/6 xl:w-4/5">
+      <main className="w-full md:w-6/7 m-auto lg:w-5/6 xl:w-4/5">
         {content}
       </main>
 

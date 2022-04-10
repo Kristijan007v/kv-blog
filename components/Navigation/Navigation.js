@@ -19,6 +19,12 @@ export default function Navigation() {
     setIsSearchOpen(!isSearchOpen);
   };
 
+  const [isCategoriesOpen, setIsCategoriesOpen] = React.useState(false);
+
+  const toogleCategories = () => {
+    setIsCategoriesOpen(!isCategoriesOpen);
+  };
+
   return (
     <>
       <nav className="bg-primary text-white sticky top-0 z-20">
@@ -26,14 +32,17 @@ export default function Navigation() {
           <Link href="/">
             <a className="font-semibold text-xl">KV.blog</a>
           </Link>
-          <div className="hidden space-x-6 md:flex">
+          <div className="hidden space-x-6 md:flex items-center">
             <SearchButton onclick={toogleSearch} />
             <Link href="/">
               <a className="font-semibold text-xl link">Home</a>
             </Link>
-            <Link href="/">
-              <a className="font-semibold text-xl link">Categories</a>
-            </Link>
+            <button
+              className="font-semibold text-xl link"
+              onClick={toogleCategories}
+            >
+              Categories
+            </button>
             <Link href="/">
               <a className="font-semibold text-xl link">Contact me</a>
             </Link>
@@ -44,7 +53,29 @@ export default function Navigation() {
             <MenuButton onclick={toogleMenu} />
           </div>
         </div>
-        {/* Menu */}
+        {/* Categories menu - DESKTOP ONLY */}
+        {isCategoriesOpen && (
+          <div className="hidden md:block bg-special p-4">
+            <ul className="text-center flex space-x-4 text-xl">
+              <li>
+                <Link href="/">
+                  <a className="link">Web development</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Frontend</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Backend</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+        {/* Menu  - MOBILE ONLY */}
         {isMenuOpen && (
           <div className="flex-none bg-primary p-6">
             <ul className="text-center flex flex-col space-y-2 text-xl">

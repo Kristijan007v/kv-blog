@@ -26,7 +26,7 @@ import WhatsappIconDefault from "../Icons/WhatsappIconDefault";
 
 export default function SocialShare() {
   return (
-    <div className="bg-primary p-4 text-white flex justify-between items-center">
+    <div className="bg-primary p-4 text-white flex justify-between items-center sm:w-full md:w-5/6 lg:w-4/5 m-auto md:rounded-md">
       <p className="font-semibold text-lg">Share article</p>
       <div className="flex space-x-4">
         <FacebookShareButton

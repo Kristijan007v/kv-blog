@@ -15,14 +15,14 @@ const Post = () => {
         title={`Post - ${pid}`}
         content={
           <>
-            <div className="m-6 flex flex-col space-y-6">
+            <div className="m-auto mt-8 mb-8 flex flex-col space-y-6 w-5/6 lg:w-4/5">
               <h1 className="heading__main">{pid}</h1>
               <ArticleInfo />
               <Image
                 className="rounded-md mt-6"
                 src={"/images/article.jpg"}
                 width="100%"
-                height={"100%"}
+                height={"60%"}
                 alt={"Article Image"}
                 layout={"responsive"}
               />
