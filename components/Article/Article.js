@@ -8,14 +8,15 @@ import Link from "next/link";
 export default function Article() {
   return (
     <article className="m-6 flex flex-col space-y-4">
-      <Image
-        className="rounded-md"
-        src={"/images/article.jpg"}
-        width="100%"
-        height={"80%"}
-        alt={"Article Image"}
-        layout={"responsive"}
-      />
+      <div className="relative w-full h-72 my-2">
+        <Image
+          className="rounded-md"
+          alt={"Article Image"}
+          src={"/images/article.jpg"}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
       <div className="flex justify-between">
         <Calendar />
         <Time />
