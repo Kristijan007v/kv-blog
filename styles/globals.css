@@ -5,6 +5,11 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+html,
+body {
+  @apply scroll-smooth;
+}
+
 .icon {
   @apply text-3xl text-white cursor-pointer;
 }
@@ -50,7 +55,7 @@ body {
 }
 
 .link {
-  @apply text-white hover:underline hover:underline-offset-4;
+  @apply text-white hover:underline hover:underline-offset-4 font-medium;
 }
 
 .btn {
