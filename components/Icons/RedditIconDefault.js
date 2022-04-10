@@ -1,16 +1,16 @@
-import Link from "next/link";
 import React from "react";
 import { IconContext } from "react-icons";
+import { BsReddit } from "react-icons/bs";
 
-export default function IconLink({ onclick, link, iconComponent }) {
+export default function RedditIconDefault({ onclick }) {
   return (
     <>
       <IconContext.Provider
         value={{
-          className: "link__icon",
+          className: "icon",
         }}
       >
-        <Link href={`${link}`}>{iconComponent}</Link>
+        <BsReddit onClick={onclick} />
       </IconContext.Provider>
     </>
   );

@@ -10,7 +10,7 @@ export default function InstagramIconDefault({ onclick, link }) {
       ) : (
         <IconContext.Provider
           value={{
-            className: "icon__social",
+            className: "icon",
           }}
         >
           <AiOutlineInstagram onClick={onclick} />
