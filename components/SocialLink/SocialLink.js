@@ -7,10 +7,7 @@ import IconLink from "../IconLink/IconLink";
 export default function SocialLink() {
   return (
     <div className="flex justify-center items-center space-x-4">
-      <IconLink
-        link={"/post/firstpost"}
-        iconComponent={<GithubIcon link={"yes"} />}
-      />
+      <GithubIcon link={"yes"} href={"https://github.com/kristijan007v"} />
       <IconLink
         link={"/post/firstpost"}
         iconComponent={<InstagramIconDefault link={"yes"} />}
