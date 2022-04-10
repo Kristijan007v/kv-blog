@@ -10,11 +10,11 @@
 }
 
 .icon__special {
-  @apply text-gray-600 font-bold text-2xl;
+  @apply text-grayInfo font-bold text-2xl;
 }
 
 body {
-  @apply bg-secondary;
+  @apply bg-secondary font-Roboto;
 }
 
 .heading__main {
@@ -30,7 +30,7 @@ body {
 }
 
 .p__post {
-  @apply text-white text-lg font-semibold text-gray-500;
+  @apply text-lg font-medium text-graySpecial;
 }
 
 .p__default {
@@ -38,7 +38,7 @@ body {
 }
 
 .text__author {
-  @apply text-gray-500 font-medium;
+  @apply text-grayInfo font-medium;
 }
 
 .link {
