@@ -8,11 +8,11 @@ import Link from "next/link";
 export default function Article() {
   return (
     <article className="m-6 flex flex-col space-y-4">
-      <div className="relative w-full h-72 my-2">
+      <div className="relative w-full h-72">
         <Image
           className="rounded-md"
           alt={"Article Image"}
-          src={"/images/article.jpg"}
+          src={"/images/article.webp"}
           layout="fill"
           objectFit="cover"
         />

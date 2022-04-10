@@ -18,14 +18,15 @@ const Post = () => {
             <div className="m-auto mt-8 mb-8 flex flex-col space-y-6 w-5/6 lg:w-4/5">
               <h1 className="heading__main">{pid}</h1>
               <ArticleInfo />
-              <Image
-                className="rounded-md mt-6"
-                src={"/images/article.jpg"}
-                width="100%"
-                height={"60%"}
-                alt={"Article Image"}
-                layout={"responsive"}
-              />
+              <div className="image__container">
+                <Image
+                  className="image mt-6"
+                  src={"/images/article.jpg"}
+                  alt={"Article Image"}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
               <h2 className="heading__2">This is a H2 heading</h2>
               <p className="p__post">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

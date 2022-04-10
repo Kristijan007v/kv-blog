@@ -62,14 +62,9 @@ body {
   @apply bg-primary text-white pt-2 pb-2 pr-6 pl-6 rounded-md hover:bg-blue-600;
 }
 
-.image-container {
-  width: 50vw;
-  height: 50vh;
-  position: relative;
+.image__container {
+  @apply relative w-full h-72;
 }
-.image-container .image {
-  width: 100%;
-  height: 100%;
-  position: relative !important;
-  object-fit: cover;
+.image {
+  @apply rounded-md;
 }
