@@ -8,7 +8,7 @@ export default function Footer() {
         Get the latest posts delivered right to your inbox.
       </p>
       <input
-        className="bg-transparent p-2 border-2 border-gray-700 rounded-md placeholder-gray-500 w-full text-white focus:outline-none focus:border-white"
+        className="bg-transparent p-2 border-2 placeholder:font-semibold border-grayInfo rounded-md placeholder-grayInfo w-full text-white focus:outline-none focus:border-white"
         type="email"
         placeholder="Email address"
       />
