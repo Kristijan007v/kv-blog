@@ -28,34 +28,6 @@ export default function Navigation() {
   };
 
   /* Hide navigation on scroll */
-  const [showNavbar, setshowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const controlNavbar = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
-        setshowNavbar(false);
-      } else {
-        // if scroll up showNavbar the navbar
-        setshowNavbar(true);
-      }
-
-      // remember current page location to use in the next move
-      setLastScrollY(window.scrollY);
-    }
-  };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
-
-      // cleanup function
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
 
   //Animations
   const dropIn = {
@@ -81,89 +53,82 @@ export default function Navigation() {
   return (
     <>
       <SkipContentLink />
-      {showNavbar && (
-        <motion.nav
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="bg-primary text-white sticky top-0 z-10"
-        >
-          <div className="flex justify-between items-center p-4">
+      <nav className="bg-primary text-white sticky top-0 z-10">
+        <div className="flex justify-between items-center p-4">
+          <Link href="/">
+            <a className="font-semibold text-xl">KV.blog</a>
+          </Link>
+          <div className="hidden space-x-6 md:flex items-center">
+            <SearchButton onclick={toogleSearch} />
             <Link href="/">
-              <a className="font-semibold text-xl">KV.blog</a>
+              <a className="font-semibold text-xl link">Home</a>
             </Link>
-            <div className="hidden space-x-6 md:flex items-center">
-              <SearchButton onclick={toogleSearch} />
-              <Link href="/">
-                <a className="font-semibold text-xl link">Home</a>
-              </Link>
-              <button
-                className="font-semibold text-xl link"
-                onClick={toogleCategories}
-              >
-                Categories
-              </button>
-              <Link href="/">
-                <a className="font-semibold text-xl link">Contact me</a>
-              </Link>
-            </div>
-
-            <div className="flex space-x-4 md:hidden">
-              <SearchButton onclick={toogleSearch} />
-              <MenuButton onclick={toogleMenu} />
-            </div>
-          </div>
-          {/* Categories menu - DESKTOP ONLY */}
-          {isCategoriesOpen && (
-            <div className="hidden md:block bg-special p-4">
-              <ul className="text-center flex space-x-4 text-xl">
-                <li>
-                  <Link href="/">
-                    <a className="link">Web development</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">
-                    <a className="link">Frontend</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">
-                    <a className="link">Backend</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
-          {/* Menu  - MOBILE ONLY */}
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex-none md:hidden bg-primary p-6"
+            <button
+              className="font-semibold text-xl link"
+              onClick={toogleCategories}
             >
-              <ul className="text-center flex flex-col space-y-2 text-xl">
-                <li>
-                  <Link href="/">
-                    <a className="link">Home</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">
-                    <a className="link">Frontend</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">
-                    <a className="link">Backend</a>
-                  </Link>
-                </li>
-              </ul>
-            </motion.div>
-          )}
-        </motion.nav>
-      )}
+              Categories
+            </button>
+            <Link href="/">
+              <a className="font-semibold text-xl link">Contact me</a>
+            </Link>
+          </div>
+
+          <div className="flex space-x-4 md:hidden">
+            <SearchButton onclick={toogleSearch} />
+            <MenuButton onclick={toogleMenu} />
+          </div>
+        </div>
+        {/* Categories menu - DESKTOP ONLY */}
+        {isCategoriesOpen && (
+          <div className="hidden md:block bg-special p-4">
+            <ul className="text-center flex space-x-4 text-xl">
+              <li>
+                <Link href="/">
+                  <a className="link">Web development</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Frontend</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Backend</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+        {/* Menu  - MOBILE ONLY */}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="flex-none md:hidden bg-primary p-6"
+          >
+            <ul className="text-center flex flex-col space-y-2 text-xl">
+              <li>
+                <Link href="/">
+                  <a className="link">Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Frontend</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="link">Backend</a>
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </nav>
 
       {/* Search */}
       {isSearchOpen && (

@@ -63,7 +63,7 @@ body {
 }
 
 .btn__fixed {
-  @apply fixed bottom-3 right-3 text-2xl bg-white p-2 lg:p-3 rounded-full;
+  @apply fixed bottom-3 right-3 text-2xl bg-black dark:bg-white p-2 lg:p-3 rounded-full;
 }
 
 .image__container {

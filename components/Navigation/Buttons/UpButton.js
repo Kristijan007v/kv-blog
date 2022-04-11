@@ -13,7 +13,7 @@ export default function CloseButton({ onclick }) {
     <>
       <IconContext.Provider
         value={{
-          className: "",
+          className: "text-white dark:text-black",
         }}
       >
         <button className="btn__fixed" onClick={scrollToTop}>
