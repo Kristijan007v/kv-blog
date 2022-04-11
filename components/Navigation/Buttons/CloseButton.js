@@ -1,6 +1,6 @@
 import React from "react";
 import { IconContext } from "react-icons";
-import { AiOutlineClose } from "react-icons/ai";
+import { MdOutlineClose } from "react-icons/md";
 
 export default function CloseButton({ onclick }) {
   return (
@@ -10,7 +10,7 @@ export default function CloseButton({ onclick }) {
           className: "icon",
         }}
       >
-        <AiOutlineClose onClick={onclick} />
+        <MdOutlineClose onClick={onclick} />
       </IconContext.Provider>
     </>
   );
