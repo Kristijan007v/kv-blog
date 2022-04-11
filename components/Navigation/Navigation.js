@@ -100,7 +100,7 @@ export default function Navigation() {
           </div>
         )}
         {/* Menu  - MOBILE ONLY */}
-        {isMenuOpen && (
+        {isMenuOpenn && (
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0 }}

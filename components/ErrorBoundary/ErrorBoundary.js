@@ -1,4 +1,5 @@
 import React from "react";
+import DefaultButton from "../Navigation/Buttons/DefaultButton";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -17,17 +18,23 @@ class ErrorBoundary extends React.Component {
     console.log({ error, errorInfo });
   }
   render() {
+    function refreshPage() {
+      window.location.reload(false);
+    }
     // Check if the error is thrown
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <div>
-          <h2>Oops, there is an error!</h2>
+        <div className="bg-red-500 text-center p-4 text-white font-semibold flex items-center justify-center space-x-2">
+          <p>
+            There was an error in loading {this.props.moduleName} module. Please
+            try to refresh the page and try again.
+          </p>
           <button
-            type="button"
-            onClick={() => this.setState({ hasError: false })}
+            className="bg-white text-black pt-2 pb-2 pr-4 pl-4 rounded-md"
+            onClick={refreshPage}
           >
-            Try again?
+            Refresh
           </button>
         </div>
       );

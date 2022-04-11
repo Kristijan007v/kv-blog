@@ -20,7 +20,7 @@ export default function Skeleton({ title, content }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <ErrorBoundary moduleName={"Navigation"}>
         <Navigation />
       </ErrorBoundary>
 
@@ -36,7 +36,7 @@ export default function Skeleton({ title, content }) {
         {content}
       </motion.main>
 
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <ErrorBoundary moduleName={"Footer"}>
         <Footer />
       </ErrorBoundary>
 

@@ -1,5 +1,10 @@
 import React from "react";
 
-export default function ErrorFallback() {
-  return <div>ErrorFallback</div>;
+export default function ErrorFallback({ moduleName, error }) {
+  return (
+    <div>
+      There was an error in loading {moduleName} module. Please try to refresh
+      the page and try again.
+    </div>
+  );
 }
