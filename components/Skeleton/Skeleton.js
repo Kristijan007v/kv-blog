@@ -3,6 +3,7 @@ import Head from "next/head";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import Footer from "../Footer/Footer";
 import Navigation from "../Navigation/Navigation";
+import UpButton from "../Navigation/Buttons/UpButton";
 
 export default function Skeleton({ title, content }) {
   const variants = {
@@ -39,6 +40,11 @@ export default function Skeleton({ title, content }) {
 
       <ErrorBoundary moduleName={"Footer"}>
         <Footer />
+      </ErrorBoundary>
+
+      {/* Arrow up */}
+      <ErrorBoundary moduleName={"Arrow up"}>
+        <UpButton />
       </ErrorBoundary>
 
       {/* Popups */}
