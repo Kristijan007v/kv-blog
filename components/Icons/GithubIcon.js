@@ -12,8 +12,10 @@ export default function GithubIcon({ onclick, link, href }) {
             className: "link__icon",
           }}
         >
-          <Link href={`${href}`}>
-            <AiOutlineGithub />
+          <Link href="/">
+            <a>
+              <AiOutlineGithub />
+            </a>
           </Link>
         </IconContext.Provider>
       ) : (

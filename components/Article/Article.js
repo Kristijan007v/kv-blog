@@ -12,6 +12,7 @@ export default function Article() {
       <article className="m-6 flex flex-col space-y-4">
         <div className="relative w-full h-72">
           <Image
+            priority
             className="rounded-md"
             alt={"Article Image"}
             src={"/images/article.webp"}

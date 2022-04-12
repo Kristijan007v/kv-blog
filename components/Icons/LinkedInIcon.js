@@ -6,7 +6,13 @@ export default function LinkedInIcon({ onclick, link }) {
   return (
     <>
       {link ? (
-        <AiFillLinkedin onClick={onclick} />
+        <IconContext.Provider
+          value={{
+            className: "icon__social",
+          }}
+        >
+          <AiFillLinkedin onClick={onclick} />
+        </IconContext.Provider>
       ) : (
         <IconContext.Provider
           value={{
