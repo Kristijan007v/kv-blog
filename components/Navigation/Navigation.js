@@ -56,7 +56,7 @@ export default function Navigation() {
       <nav className="bg-primary text-white sticky top-0 z-10">
         <div className="flex justify-between items-center p-4">
           <Link href="/">
-            <a className="font-semibold text-xl">KV.blog</a>
+            <a className="font-semibold text-xl">DevClub</a>
           </Link>
           <div className="hidden space-x-6 md:flex items-center">
             <SearchButton onclick={toogleSearch} />
