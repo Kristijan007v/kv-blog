@@ -9,7 +9,7 @@ export default function Custom404() {
     <>
       <Navigation />
       <div className="text-center mt-12 mb-16 m-auto flex flex-col space-y-6 w-5/6 md:w-3/4 lg:w-2/4 xl:w-2/5">
-        <p className="text-graySpecial font-extrabold text-8xl">404</p>
+        <p className="text-grayInfo font-extrabold text-8xl">404</p>
         <h1 className="heading__center">You have found a secret place.</h1>
         <p className="p__post">
           Unfortunately, this is only a 404 page. You may have mistyped the
