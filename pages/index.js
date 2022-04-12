@@ -1,8 +1,10 @@
 import Article from "../components/Article/Article";
 import DefaultButton from "../components/Navigation/Buttons/DefaultButton";
 import Skeleton from "../components/Skeleton/Skeleton";
+import groq from "groq";
+import client from "../client";
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <>
       <Skeleton
@@ -21,9 +23,24 @@ export default function Home() {
               Recent posts
             </h2>
             <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mb-8">
-              <Article />
-              <Article />
-              <Article />
+              {posts.length > 0 &&
+                posts.map(
+                  ({
+                    _id,
+                    title = "",
+                    slug = "",
+                    publishedAt = "",
+                    name = "",
+                  }) =>
+                    slug && (
+                      <Article
+                        key={_id}
+                        articleTitle={title}
+                        href={`/post/${slug.current}`}
+                        publishedAt={publishedAt}
+                      />
+                    )
+                )}
             </section>
             <DefaultButton text={"Load more"} centerMode={"yes"} />
           </>
@@ -31,4 +48,15 @@ export default function Home() {
       />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const posts = await client.fetch(groq`
+    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+  `);
+  return {
+    props: {
+      posts,
+    },
+  };
 }

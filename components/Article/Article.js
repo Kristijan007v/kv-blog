@@ -5,11 +5,12 @@ import Time from "../Time/Time";
 import Image from "next/image";
 import Link from "next/link";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+import client from "../../client";
 
-export default function Article() {
+export default function Article({ key, articleTitle, href, publishedAt }) {
   return (
     <ErrorBoundary moduleName={"Article"}>
-      <article className="m-6 flex flex-col space-y-4">
+      <article className="m-6 flex flex-col space-y-4" key={key}>
         <div className="relative w-full h-72">
           <Image
             priority
@@ -21,11 +22,11 @@ export default function Article() {
           />
         </div>
         <div className="flex justify-between">
-          <Calendar />
+          <Calendar date={publishedAt} />
           <Time />
         </div>
-        <Link href="/post/firstpost">
-          <a className="heading__post">First post</a>
+        <Link href={href}>
+          <a className="heading__post">{articleTitle}</a>
         </Link>
         <p className="p__post">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -33,7 +34,7 @@ export default function Article() {
         </p>
         <div className="flex justify-between items-center">
           <Tag text={"Python"} special={"yes"} />
-          <p className="text__author">Author: Kristijan</p>
+          <p className="text__author">Author: Kristijan Vidović</p>
         </div>
       </article>
     </ErrorBoundary>
