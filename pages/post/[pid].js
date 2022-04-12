@@ -20,6 +20,7 @@ const Post = () => {
               <ArticleInfo />
               <div className="image__container">
                 <Image
+                  priority
                   className="image"
                   src={"/images/article.jpg"}
                   alt={"Article Image"}
