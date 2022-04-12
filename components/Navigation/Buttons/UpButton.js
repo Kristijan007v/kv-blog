@@ -16,7 +16,11 @@ export default function CloseButton({ onclick }) {
           className: "text-white dark:text-black",
         }}
       >
-        <button className="btn__fixed" onClick={scrollToTop}>
+        <button
+          className="btn__fixed"
+          onClick={scrollToTop}
+          aria-label="Go to the top"
+        >
           <AiOutlineArrowUp />
         </button>
       </IconContext.Provider>

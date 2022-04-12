@@ -12,11 +12,7 @@ export default function InstagramIconDefault({ onclick, link }) {
             className: "link__icon",
           }}
         >
-          <Link href="/">
-            <a>
-              <AiOutlineInstagram />
-            </a>
-          </Link>
+          <AiOutlineInstagram />
         </IconContext.Provider>
       ) : (
         <IconContext.Provider

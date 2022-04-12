@@ -12,11 +12,7 @@ export default function GithubIcon({ onclick, link, href }) {
             className: "link__icon",
           }}
         >
-          <Link href="/">
-            <a>
-              <AiOutlineGithub />
-            </a>
-          </Link>
+          <AiOutlineGithub />
         </IconContext.Provider>
       ) : (
         <IconContext.Provider
