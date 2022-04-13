@@ -7,6 +7,7 @@ import CloseButton from "./Buttons/CloseButton";
 import MenuButton from "./Buttons/MenuButton";
 import SearchButton from "./Buttons/SearchButton";
 import Tag from "./Tag/Tag";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +21,8 @@ export default function Navigation() {
   const toogleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
   };
+
+  useHotkeys("ctrl+k", () => setIsSearchOpen(true));
 
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
 
