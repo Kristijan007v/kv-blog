@@ -12,10 +12,18 @@
     "@sanity/client": "^3.3.0",
     "framer-motion": "^6.3.3",
     "groq": "^2.29.3",
+<<<<<<< HEAD
     "next": "12.1.6",
     "next-pwa": "^5.5.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+=======
+    "next": "12.1.4",
+    "next-pwa": "^5.5.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-hotkeys-hook": "^3.4.4",
+>>>>>>> 4901745073060c2779abffebb75d86073a18bee5
     "react-icons": "^4.3.1",
     "react-share": "^4.4.0"
   },
